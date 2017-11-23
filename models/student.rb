@@ -45,5 +45,15 @@ class Student
     return Student.new(student)
   end
 
+  def house()
+    sql =  'SELECT houses.*
+            FROM houses
+            INNER JOIN students
+            ON students.house_id = houses.id
+            WHERE students.house_id = $1'
+    values = [@house_id]
+    house = SqlRunner.run(sql, values).first
+    return House.new(house)
+  end
 
 end
