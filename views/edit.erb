@@ -1,5 +1,5 @@
-<form method="post" action="/students/<%= student.id>">
-  <input type="hidden" name="method" value="put">
+<form method="post" action="/students/<%= @student.id %>">
+  <input type="hidden" name="_method" value="put">
 
 <div class="field-group">
   <label for="first-name-field" class="label">First Name:</label>
@@ -48,9 +48,9 @@
   <div class ="field">
     <select name="house_id" id="house-selection">
       <% @houses.each do |house| %>
-      <option value=<%= house.id %>
-      <%= "selected" if @student.house.id == house.id %>>
-      <%= house.name %></option>
+        <option value=<%= house.id %>
+            <%= "selected" if @student.house.id == house.id %>>
+            <%= house.name %></option>
       <% end %>
     </select>
   </div>
