@@ -1,0 +1,56 @@
+<form method="post" action="/students">
+
+<div class="field-group">
+  <label for="first-name-field" class="label">First Name:</label>
+  <div class="field">
+    <input
+      type ="text"
+      name ="first_name"
+      id="first-name-field"
+      placeholder="First name"
+      required
+    />
+  </div>
+</div>
+
+<div class="field-group">
+  <label for="second-name-field" class="label">Second Name:</label>
+  <div class="field">
+    <input
+      type ="text"
+      name ="second_name"
+      id="second-name-field"
+      placeholder="Second name"
+      required
+    />
+  </div>
+</div>
+
+<div class="field-group">
+  <label for="age-field" class="label">Age:</label>
+  <div class="field">
+    <input
+      type ="text"
+      name ="age"
+      id="age-field"
+      placeholder="Age"
+      required
+    />
+  </div>
+</div>
+
+<div class = "field-group">
+  <label for="topping-selection" class="label">Topping:</label>
+  <div class ="field">
+    <select name="house" id="house-selection">
+      <option value= "Lannister">Lannister</option>
+      <option value= "Stark">Stark</option>
+      <option value= "Tully">Tully</option>
+      <option value= "Greyjoy">Greyjoy</option>
+      <option value= "Frey">Frey</option>
+    </select>
+  </div>
+</div>
+
+<button class="big-button button">Enrole New Student</button>
+</form>
