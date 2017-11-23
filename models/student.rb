@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Student
 
-  attr_reader :first_name, :second_name, :house, :age
+  attr_reader :first_name, :second_name, :house, :age, :id
 
 
   def initialize(options)
@@ -35,6 +35,18 @@ class Student
     ) RETURNING *"
     values = [@first_name, @second_name, @house_id, @age]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
+  end
+
+  def update()
+    sql = "UPDATE students SET (
+    first_name,
+    second_name,
+    house_id,
+    age
+    ) = ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@first_name, @second_name, @house_id, @age, @id]
+    SqlRunner.run(sql, values)
   end
 
   def self.find(id)

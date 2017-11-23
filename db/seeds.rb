@@ -29,6 +29,7 @@ student4.save()
 student5 = Student.new({'first_name' => 'Jeffrey', 'second_name' => 'Dharma', 'house_id' => house5.id, 'age' => 29})
 student5.save()
 
+
 Student.list_all()
 
 binding.pry

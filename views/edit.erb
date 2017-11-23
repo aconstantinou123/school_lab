@@ -1,0 +1,60 @@
+<form method="post" action="/students/<%= student.id>">
+  <input type="hidden" name="method" value="put">
+
+<div class="field-group">
+  <label for="first-name-field" class="label">First Name:</label>
+  <div class="field">
+    <input
+      type ="text"
+      name ="first_name"
+      id="first-name-field"
+      placeholder="First name"
+      value="<%= @student.first_name %>"
+      required
+    />
+  </div>
+</div>
+
+<div class="field-group">
+  <label for="second-name-field" class="label">Second Name:</label>
+  <div class="field">
+    <input
+      type ="text"
+      name ="second_name"
+      id="second-name-field"
+      placeholder="Second name"
+      value="<%= @student.second_name %>"
+      required
+    />
+  </div>
+</div>
+
+<div class="field-group">
+  <label for="age-field" class="label">Age:</label>
+  <div class="field">
+    <input
+      type ="text"
+      name ="age"
+      id="age-field"
+      placeholder="Age"
+      value="<%= @student.age %>"
+      required
+    />
+  </div>
+</div>
+
+<div class = "field-group">
+  <label for="topping-selection" class="label">House:</label>
+  <div class ="field">
+    <select name="house_id" id="house-selection">
+      <% @houses.each do |house| %>
+      <option value=<%= house.id %>
+      <%= "selected" if @student.house.id == house.id %>>
+      <%= house.name %></option>
+      <% end %>
+    </select>
+  </div>
+</div>
+
+<button class="big-button button">Edit Student Information</button>
+</form>
