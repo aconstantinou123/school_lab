@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('models/student.rb')
+require_relative('models/house.rb')
 
 get '/students' do
   @students = Student.list_all()
@@ -9,6 +10,7 @@ get '/students' do
 end
 
 get '/students/new' do
+  @houses = House.list_all()
   erb (:new)
 end
 

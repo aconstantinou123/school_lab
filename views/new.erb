@@ -40,14 +40,12 @@
 </div>
 
 <div class = "field-group">
-  <label for="topping-selection" class="label">Topping:</label>
+  <label for="topping-selection" class="label">House:</label>
   <div class ="field">
-    <select name="house" id="house-selection">
-      <option value= "Lannister">Lannister</option>
-      <option value= "Stark">Stark</option>
-      <option value= "Tully">Tully</option>
-      <option value= "Greyjoy">Greyjoy</option>
-      <option value= "Frey">Frey</option>
+    <select name="house_id" id="house-selection">
+      <% @houses.each do |house| %>
+      <option value=<%= house.id %>><%= house.name %></option>
+      <% end %>
     </select>
   </div>
 </div>
