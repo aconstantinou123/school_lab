@@ -4,7 +4,10 @@
 <% @students.each do |student| %>
 <p>First Name: <%= student.first_name %></p>
 <p>Second Name: <%= student.second_name %></p>
-<p>House Name: <%= student.house %></p>
+<p>House Name: <%= student.house.name %></p>
 <p>Age: <%= student.age %></p>
+<p><img src="<%= student.house.logo %>"></p>
 <hr>
 <%end%>
+
+<p><a href="/students/new">Enrole a New Student</a></p>

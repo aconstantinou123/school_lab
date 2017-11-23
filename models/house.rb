@@ -2,11 +2,12 @@ require_relative('../db/sql_runner')
 
 class House
 
-  attr_reader :id, :name
+  attr_reader :id, :name, :logo
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @logo = options['logo'].to_s
   end
 
   def self.delete_all()
@@ -22,11 +23,13 @@ class House
 
   def save()
     sql = "INSERT INTO houses (
-    name
+    name,
+    logo
     ) VALUES (
-      $1
+      $1,
+      $2
       ) RETURNING *"
-    values = [@name]
+    values = [@name, @logo]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
