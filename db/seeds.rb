@@ -16,6 +16,8 @@ house4.save()
 house5 = House.new({'name' => 'Frey'})
 house5.save()
 
+House.list_all()
+
 student1 = Student.new({'first_name' => 'Myra', 'second_name' => 'Hindley', 'house' => "Lannister", 'age' => 29})
 student1.save()
 student2 = Student.new({'first_name' => 'Charles', 'second_name' => 'Manson', 'house' => "Stark", 'age' => 29})
