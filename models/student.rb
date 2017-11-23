@@ -34,5 +34,13 @@ class Student
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM students
+    WHERE id = $1"
+    values = [id]
+    student = SqlRunner.run(sql, values)[0]
+    return Student.new(student)
+  end
+
 
 end
